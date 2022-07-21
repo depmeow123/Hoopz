@@ -1,0 +1,31 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+ 
+local PhantomForcesWindow = Library:NewWindow("Streamer Mode")
+ 
+local KillingCheats = PhantomForcesWindow:NewSection("Main")
+        
+        KillingCheats:CreateToggle("Streamer Mode", function(value)
+            if value then
+                game:GetService("Players").LocalPlayer.PlayerGui.Playerlist.Enabled = false
+                game:GetService("Players").LocalPlayer.PlayerGui.HUD.Enabled = false
+        
+                for _,v in next, game:GetService("Players"):GetPlayers() do
+                    for _,v2 in next, v.Character.HumanoidRootPart:GetChildren() do
+                        if v2:IsA("BillboardGui") and v2.Name == "NameTag" then
+                            v2.Enabled = false
+                        end
+                    end
+                end
+            else
+                game:GetService("Players").LocalPlayer.PlayerGui.Playerlist.Enabled = true
+                game:GetService("Players").LocalPlayer.PlayerGui.HUD.Enabled = true
+        
+                for _,v in next, game:GetService("Players"):GetPlayers() do
+                    for _,v2 in next, v.Character.HumanoidRootPart:GetChildren() do
+                        if v2:IsA("BillboardGui") and v2.Name == "NameTag" then
+                            v2.Enabled = true
+                        end
+                    end
+                end
+            end
+            end)
