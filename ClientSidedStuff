@@ -1,0 +1,18 @@
+ 
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+ 
+local PhantomForcesWindow = Library:NewWindow("hoopz test")
+ 
+local KillingCheats = PhantomForcesWindow:NewSection("ClientSided")
+
+KillingCheats:CreateSlider("ClientSided Money", 0, 100000000, 0, false, function(value)
+    game:GetService("Players").LocalPlayer.PlayerGui.HUD.TopFrames.MoneyFrame.MoneyButton.MoneyImage.MoneyLabel.Text = value
+     end)
+        KillingCheats:CreateButton("Twitch Logo", function()
+            game:GetService("Players").LocalPlayer.Stats.Twitch.Value = true
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CreatorTag.TwitchLabel.Visible = true
+            end)
+            KillingCheats:CreateButton("YT Logo", function()
+                game:GetService("Players").LocalPlayer.Stats.Youtuber.Value = true
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CreatorTag.YoutubeLabel.Visible = true
+                end)
