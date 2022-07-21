@@ -1,4 +1,5 @@
- 
+ -- this is clientsided, other people wont see it
+
 local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
  
 local PhantomForcesWindow = Library:NewWindow("hoopz test")
